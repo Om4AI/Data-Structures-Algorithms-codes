@@ -26,7 +26,6 @@ public class CAT_Exception{
 
 
     public static void main(String[] args){
-        System.out.println("\nName: Om Mule\nReg No: 19BCE0439");
         int cat, quiz;
         Scanner s = new Scanner(System.in);
         System.out.println("Enter CAT marks: ");
