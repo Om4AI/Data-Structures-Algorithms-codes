@@ -2,29 +2,22 @@ class Solution {
     public void setZeroes(int[][] matrix) {
 //         Locate 0s' first
 //         Rows
-        List<List<Integer>> list = new ArrayList<>();
+        Set<Integer> list1 = new HashSet<>();
+        Set<Integer> list2 = new HashSet<>();
         for (int i=0; i<matrix.length; i++){
 //             Columns
             for (int j=0; j<matrix[i].length; j++){
                 if (matrix[i][j]==0){
-                    List<Integer> temp = new ArrayList<>();
-                    temp.add(i);
-                    temp.add(j);
-                    list.add(temp);
+                    list1.add(i);
+                    list2.add(j);
                 }
             }
         }
         // System.out.println(list);
 //         Make the rows & columsn 0s'
-        for (int j=0; j<list.size(); j++){
-            int r = list.get(j).get(0);
-            int c = list.get(j).get(1);
-            System.out.println(r+" "+c);
-            for (int i=0; i<matrix[r].length; i++){
-                matrix[r][i] = 0;
-            }
-            for (int i=0; i<matrix.length; i++){
-                matrix[i][c] = 0;
+        for (int i=0; i<matrix.length; i++){
+            for (int j=0; j<matrix[i].length; j++){
+                if (list1.contains(i) || list2.contains(j)){matrix[i][j]=0;}
             }
         }
     }
