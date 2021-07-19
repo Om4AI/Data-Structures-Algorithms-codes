@@ -1,4 +1,4 @@
-// Linked List: LeetCode Java code
+// Linked List (ListNode) : LeetCode Java code
 
 public class Solution {
     
