@@ -101,3 +101,15 @@ class Solution {
         return arr;
     }
 }
+
+
+// ----------------------------------------------------
+
+
+// Arrays.sort(arr) (Accepted) - 5ms
+class Solution {
+    public int[] sortArray(int[] nums) {
+        Arrays.sort(nums);
+        return nums;
+    }
+}
