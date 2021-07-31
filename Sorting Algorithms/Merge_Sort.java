@@ -54,11 +54,13 @@ public class Merge_Sort {
         if (l<r){
             // Get the midpoint
             int m = l + (r-l)/2;
-
+            
+//             Divide & Sort
             msort(arr, l, m);    //Sort the left subarray
             msort(arr, m+1, r);  //Sort the right subarray
 
             // Merge the sorted arrays
+//             Merge
             merge(arr, l, m, r);
         }
         
