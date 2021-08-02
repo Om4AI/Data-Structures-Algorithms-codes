@@ -1,21 +1,15 @@
 class Solution {
-    public int[] twoSum(int[] nums, int target) {
-        int i,j,t, f=0;
+    public int[] twoSum(int[] arr, int target) {
+        
         int res[] = new int[2];
-        int n = nums.length;
-        for (i=0 ; i<n-1 ; i++){
-            t = target - nums[i];
-            for(j=i+1 ; j<n ; j++){
-                if (nums[j] == t){
-                    f = 1;
+        for(int i=0; i<arr.length; i++){
+            int el = target - arr[i];
+            for (int j=i+1; j<arr.length; j++){
+                if (arr[j]==el){
+                    res[0] = i;
+                    res[1] = j;
                     break;
                 }
-                else{continue;}
-            }
-            if (f == 1){
-                res[0] = i;
-                res[1] = j;
-                break;
             }
         }
         return res;
