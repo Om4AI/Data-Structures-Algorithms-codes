@@ -36,10 +36,10 @@ public class Quick_Sort {
 
     static void quickSort(int[] arr, int low, int high){
         if (low < high){
-            // pi (partioning index); element arr[pi] is in right position
+            // pi -- (partioning index): The element arr[pi] is in right position
             int pi = partition(arr, low, high);
 
-            // Sort the left & right subarrays
+            // Sort the left & right subarrays of the arr[pi] element
             quickSort(arr, low, pi-1);
             quickSort(arr, pi+1, high);
         }
