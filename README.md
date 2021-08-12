@@ -15,6 +15,6 @@
 
 
 ## Programming Languages used:
-- `Java`
-- `Python`
-- `C++`
+- Java
+- Python
+- C++
