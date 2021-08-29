@@ -27,3 +27,15 @@ class Solution {
         return list;
     }
 }
+
+// Optimized solution
+class Solution {
+    int prev = 0;
+    public TreeNode bstToGst(TreeNode root) {
+        if (root.right!=null) bstToGst(root.right);
+        prev = prev+root.val;
+        root.val = prev;
+        if (root.left!=null) bstToGst(root.left);
+        return root;
+    }
+}
