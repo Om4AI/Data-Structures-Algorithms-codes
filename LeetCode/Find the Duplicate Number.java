@@ -1,13 +1,12 @@
-// Code using HashMap
+// Code using HashSet
 
 class Solution {
     public int findDuplicate(int[] nums) {
-        int res = 0;
-        HashMap<Integer, String> map = new HashMap<>();
-        for (int i=0; i<nums.length; i++){
-            String s = map.put(nums[i], String.valueOf(nums[i]));
-            if (s != null) res = nums[i];
+        HashSet<Integer> set = new HashSet<>();
+        for (int n: nums){
+            if (set.contains(n)) return n;
+            else set.add(n);
         }
-        return res;
+        return 0;
     }
 }
