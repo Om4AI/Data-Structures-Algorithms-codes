@@ -1,24 +1,17 @@
+import java.util.*;
 class Solution {
     public boolean isValid(String s) {
-        Stack<Character> stk = new Stack<Character>();
-        int n = s.length();
-        char el, top;
-        int i =0, f=1;
-        while (i<n && n>1){
-            el = s.charAt(i);
-            if ((el == ')' || el =='}' || el==']')&& stk.empty()==false){
-                top = stk.peek();
-                if ((el==')' && top=='(')|| (el==']' && top=='[')|| (el=='}' && top=='{')){
-                    stk.pop();
-                }
-                else{f=0;}
-            }
-            else{
-                stk.push(el);
-            }
-            i+=1;
+        Stack<Character> stk = new Stack<>();
+        int f= 1;
+        for (int i=0; i<s.length(); i++){
+            char c = s.charAt(i);
+            if (c=='(' || c=='[' || c=='{') stk.push(c);
+            else if ((c==')' || c==']' || c=='}') && stk.isEmpty()) return false;
+            else if (c==')' && stk.peek()=='(') stk.pop();
+            else if (c==']' && stk.peek()=='[') stk.pop();
+            else if (c=='}' && stk.peek()=='{') stk.pop();
+            else return false;
         }
-        if (stk.empty()==false || n==1 || f==0){return false;}
-        else{return true;}
-    }       
+        return stk.isEmpty();
+    }
 }
