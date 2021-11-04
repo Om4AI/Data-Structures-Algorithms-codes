@@ -1,3 +1,4 @@
+// SOLUTION 1
 class Solution {
     public List<List<Integer>> subsets(int[] arr) {
         List<List<Integer>> ans = new ArrayList<>();
@@ -20,5 +21,38 @@ class Solution {
         curr.remove(curr.size()-1);
 //         Modify lists again with other track
         get_subsets(arr, i+1, curr, ans);
+    }
+}
+
+// SOLUTION 2 - Subset Size Approach
+class Solution {
+    List<List<Integer>> res = new ArrayList<>();
+    int n, k;
+    public List<List<Integer>> subsets(int[] nums) {
+        n = nums.length;
+//         k - Length of the subset
+        for (k=0; k<n+1; k++){
+            backtrack(0,new ArrayList<Integer>(),nums);
+        }
+        return res;
+    }
+    
+    public void backtrack(int first, List<Integer> curr, int[] arr){
+//         Current list size is equal to subset size
+        if (curr.size()==k){
+            res.add(new ArrayList<>(curr));
+            return;
+        }
+        
+        for (int i=first; i<n; i++){
+//             Add elements to the surrent list
+            curr.add(arr[i]);
+            
+//             Keep adding the further elements to the list
+            backtrack(i+1, curr, arr);
+            
+//             After completing single branch, backtrack to the previous branch
+            curr.remove(curr.size()-1);
+        }
     }
 }
