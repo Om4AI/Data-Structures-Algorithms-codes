@@ -5,6 +5,7 @@
 `Codes` included in the repository are solutions for the questions from many websites:
 - [LeetCode](https://leetcode.com/)
 - [HackerRank](https://www.hackerrank.com/)
+- [CodeChef](https://www.codechef.com/)
 </br></br></br>
 
 ### Languages used - 
