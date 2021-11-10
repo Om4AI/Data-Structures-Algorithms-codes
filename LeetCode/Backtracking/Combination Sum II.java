@@ -19,6 +19,9 @@ class Solution {
             if(i>index && arr[i]==arr[i-1])continue;
             
             list.add(arr[i]);
+            
+            
+//          Recursive call must be made on i+1 because ith index element has already been used; so we can't use that again
             backtrack(arr,i+1,target-arr[i],list,res);
             list.remove(list.size()-1);
         }
