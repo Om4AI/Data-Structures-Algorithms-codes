@@ -19,6 +19,7 @@ class Solution {
         
 //         Backtrack & Recursive call
         for(int i=0; i<larr.size(); i++){
+//             Check if previous character is not the same as the one now
             if(sb.length()>0 && sb.charAt(sb.length()-1)==larr.get(i).charAt(0)) continue;
             else sb.append(larr.get(i));
             
