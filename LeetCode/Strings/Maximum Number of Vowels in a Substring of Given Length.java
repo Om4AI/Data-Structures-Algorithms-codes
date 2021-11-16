@@ -1,6 +1,6 @@
 import java.util.*;
 
-// SLIDING WINDOW
+// SLIDING WINDOW PROTOCOL
 class Solution {
     public int maxVowels(String s, int k) {
         StringBuffer sb = new StringBuffer();
