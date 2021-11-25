@@ -1,3 +1,4 @@
+// Code by @Om
 import java.util.*;
 class Solution{
     static boolean isSubsetSum(int n, int[] arr, int w){
