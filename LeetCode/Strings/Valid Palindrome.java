@@ -1,23 +1,24 @@
+import java.util.*;
 class Solution {
     public boolean isPalindrome(String s) {
-        int f = 1;
         StringBuffer sb = new StringBuffer();
-        String specialCharactersString = "!@#$%&*()'+,-./\":;<=>?[]^_`{|}";
-        for (int i=0; i<s.length(); i++){
-            if (s.charAt(i) == ' ' || specialCharactersString.contains(String.valueOf(s.charAt(i)))){
-                continue;
-            }
-            else{sb.append(Character.toLowerCase(s.charAt(i)));}
-        }
-        System.out.println(sb);
-        int n = sb.length();
-        for (int i=0; i<n/2; i++){
-            if (sb.charAt(i) != sb.charAt(n-1-i)){
-                f = 0;
-                break;
+        for(int i=0; i<s.length(); i++){
+            char c = s.charAt(i);
+            if(Character.isDigit(c) || Character.isLetter(c)){
+                sb.append(c);
             }
         }
-        if (f == 0){return false;}
-        else{return true;}
+
+        String str = sb.toString();
+        str = str.toLowerCase();
+        int i=0, j=str.length()-1;
+        while(i<str.length() && j>=0){
+            if(str.charAt(i)!=str.charAt(j)){
+                return false;
+            }
+            i++;
+            j--;
+        }
+        return true;
     }
 }
