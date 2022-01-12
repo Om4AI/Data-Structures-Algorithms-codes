@@ -16,6 +16,7 @@ class Solution{
                 // Conditions - (Element<=W) && (Element>W)
                 if(arr[i-1]<=j){
                     // Store t[i][j] = Include count + Exclude count
+		    // Include both of the counts because- All possible asked
                     t[i][j] = t[i-1][j] + t[i-1][j-arr[i-1]];
                 }else t[i][j] = t[i-1][j];
             }
