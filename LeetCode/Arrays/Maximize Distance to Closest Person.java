@@ -1,3 +1,4 @@
+// Brute Force Approach
 import java.util.*;
 class Solution {
     public int maxDistToClosest(int[] seats) {
@@ -30,5 +31,31 @@ class Solution {
             min = Math.min(min, Math.abs(index-n));
         }
         return min;
+    }
+}
+
+
+// Optimized Approach
+import java.util.*;
+
+class Solution {
+    public int maxDistToClosest(int[] seats) {
+        int n = seats.length;
+        int prev = -1, future =0, max = 0;
+
+        for(int i=0; i<n; i++){
+            if(seats[i]==1) prev = i;
+            else{
+                // Findind the next person to right
+                while(future<n && seats[future]==0 || future<i) future++;
+
+                int left = prev==-1? n: i-prev;
+                int right = future==n? n: future-i;
+                
+                // Max = max(Maximum till now, Closest out of left & right person)
+                max = Math.max(max, Math.min(left, right));
+            }
+        }
+        return max;
     }
 }
