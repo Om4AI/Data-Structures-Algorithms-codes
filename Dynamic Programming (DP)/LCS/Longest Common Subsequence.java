@@ -11,6 +11,7 @@ class Solution {
         }
 
         // Conditions
+        // Letters are omitted here
         for(int i=1; i<n+1; i++){
             for(int j=1; j<m+1; j++){
                 if(x.charAt(i-1)==y.charAt(j-1)){
