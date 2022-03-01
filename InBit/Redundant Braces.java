@@ -1,6 +1,9 @@
+// Redundant Braces - Java Code
 public class Solution {
     public int braces(String s){
         Stack<Character> stk = new Stack<>();
+        
+        // Condition to check (a) type cases
         for(int i=1; i<s.length()-1; i++){
             char c = s.charAt(i);
             if(s.charAt(i-1)=='(' && s.charAt(i+1)==')') return 1;
@@ -11,6 +14,7 @@ public class Solution {
 
             // Conditions
             if(c=='(') stk.push(c);
+            // IMP - Empty stack condition
             else if(c!='(' && c!=')' && stk.isEmpty()) stk.push(c);
             else if (c!='(' && c!=')' && stk.peek()!='c') stk.push('c');
             else if (c==')' && stk.peek()=='('){
