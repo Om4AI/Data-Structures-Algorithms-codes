@@ -1,4 +1,5 @@
 // Collections Q - Java
+
 public class Solution {
     public String solve(String s){
         StringBuffer sb = new StringBuffer();
