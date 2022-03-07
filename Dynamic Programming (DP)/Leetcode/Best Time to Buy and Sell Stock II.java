@@ -1,4 +1,4 @@
-// Memoization Approach - Top-Down DP
+// Memoization Approach - Top-Down DP (Memory Error)
 
 import java.util.*;
 class Solution {
@@ -40,5 +40,20 @@ class Solution {
             max = Math.max(sell, skip);
         }
         return max;
+    }
+}
+
+// DP Accepted Approach
+class Solution {
+    public int maxProfit(int[] arr) {
+        int n = arr.length, maxProfit = 0;
+        
+        for(int i=1; i<n; i++){
+	// Max ( Profit till yesterday, Profit till yesterday+ If I purchase yesterday & sell today) 
+	// This means if we get a profit from yesterday to today, we take it else in case of loss
+	// we reject it and continue
+            maxProfit = Math.max(maxProfit, (maxProfit+arr[i]-arr[i-1]));
+        }
+        return maxProfit;
     }
 }
