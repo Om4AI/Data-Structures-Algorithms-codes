@@ -1,16 +1,19 @@
+// 2-Pointer Approach
 class Solution {
-    public int maxArea(int[] height) {
-        int n = height.length;
-        int max_area = 0;
-        int i = 0, j= n-1;
-        while (i < j){
-            int area = Math.min(height[i], height[j]) * (j-i);
-            if (area > max_area){max_area = area;}
-          
-            // Try to increase the height thus shift the index where height is lesser
-            if (height[i] < height[j]) i++;
-            else j--;
+    public int maxArea(int[] arr) {
+        int n = arr.length;
+        int i=0, j = n-1;
+
+        int max = 0;
+        while(i<j){
+            max = Math.max(max, (Math.min(arr[i], arr[j])*(j-i)));
+            if(arr[i]<arr[j]) i++;
+            else if(arr[i]>arr[j]) j--;
+            else{
+                i++;
+                j--;
+            }
         }
-        return max_area;
+        return max;
     }
 }
