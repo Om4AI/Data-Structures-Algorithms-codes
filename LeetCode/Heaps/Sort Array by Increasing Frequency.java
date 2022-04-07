@@ -13,15 +13,10 @@ class Solution {
             int t[] = new int[2];
             t[0] = k;
             t[1] = map.get(k);
-            if(!minh.isEmpty()){
-                int occ2 = map.get(k);
-                int occ1 = minh.peek()[1];
-                if(occ1==occ2 && k<minh.peek()[0]){
-                    minh.add(t);
-                }else minh.add(t);
-            }else minh.add(t);            
+            minh.add(t);            
         }
         
+        // Create final result array
         List<Integer> l= new ArrayList<>();
         int res[] = new int[nums.length];
         while(!minh.isEmpty()){
