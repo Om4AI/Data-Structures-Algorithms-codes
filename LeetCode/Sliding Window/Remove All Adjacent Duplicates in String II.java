@@ -79,3 +79,59 @@ class Solution {
         return sb.toString();
     }
 }
+
+
+
+// Stack Approach (TLE)
+import java.util.*;
+
+class Solution {
+    static int f=0;
+    public String removeDuplicates(String s, int k) {
+        while(true){
+            f = 0;
+            s = removeRepeated(s,k);
+            if(f==1){
+                continue;
+            }else if(f==0){
+                return s;
+            }
+        } 
+    }
+
+    public static String removeRepeated(String s, int k){
+        Stack<Character> stk = new Stack<>();
+        StringBuffer sb = new StringBuffer();
+        
+        for(int i=0; i<s.length(); i++){
+            char c = s.charAt(i);
+            if(stk.isEmpty()){
+                stk.push(c);
+                continue;
+            }
+            
+            // Stack full
+            if(stk.size()==k){
+                f = 1;
+                stk = new Stack<>();
+                stk.push(c);
+            }
+
+            // Stack Not full
+            else if(stk.size()<k){
+                if(c==stk.peek())stk.push(c);
+                else{
+                    while(!stk.isEmpty()){
+                        sb.append(stk.pop());
+                    }
+                    stk.push(c);
+                }
+            }
+        }
+        // Last check
+        if(stk.size()<k){
+            while(!stk.isEmpty()){sb.append(stk.pop());}
+        }
+        return sb.toString();
+    }
+}
