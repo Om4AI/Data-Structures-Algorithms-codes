@@ -19,11 +19,10 @@ class Solution {
         } 
 
         // Find the BFS for source
-        List<Integer> bfs = BFS(mat,n,source);
-        return bfs.contains(destination);
+        return BFS(mat,n,source,destination);
     }
 
-    public static List<Integer> BFS(int[][] graph, int n, int s){
+    public static boolean BFS(int[][] graph, int n, int s, int dest){
 
         // Initialization
         int vis[] = new int[n];
@@ -33,7 +32,7 @@ class Solution {
         vis[s] = 1;
         Queue<Integer> q = new LinkedList<>();
         q.add(s);
-        List<Integer> res = new ArrayList<>();
+        // List<Integer> res = new ArrayList<>();
 
         while(!q.isEmpty()){
             int curr = q.poll();
@@ -41,10 +40,10 @@ class Solution {
                 if(graph[curr][i]==1 && vis[i]==0){
                     q.add(i);
                     vis[i] = 1;
+                    if(i==dest) return true;
                 }
             }
-            res.add(curr);
         }
-        return res;
+        return false;
     }
 }
