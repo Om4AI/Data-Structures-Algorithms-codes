@@ -27,19 +27,28 @@ public class Bipartite_Graph {
             map.put(v,temp);
         }
 
-        if(isBipartite(map,n,m)) System.out.println("Graph is Bipartite");
+        if(isBipartite(map,n)) System.out.println("Graph is Bipartite");
         else System.out.println("Graph is NOT Bipartite");
     }
 
-    public static boolean isBipartite(HashMap<Integer,List<Integer>> map, int n, int m){
+    public static boolean isBipartite(HashMap<Integer,List<Integer>> map, int n){
         // Initialize color array with -1
         int color[] = new int[n+1];
         Arrays.fill(color,-1);
 
+        for(int i=0; i<n+1; i++){
+            if(color[i]==-1){
+                if(!BFScheck(map,i,color)) return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean BFScheck(HashMap<Integer,List<Integer>> map, int sn, int[] color){
         // Initialize the queue with starting node value
         Queue<Integer> q = new LinkedList<>();
-        q.add(1);
-        color[1] = 0;
+        q.add(sn);
+        color[sn] = 0;
 
         // Actual loop
         while(!q.isEmpty()){
@@ -49,7 +58,7 @@ public class Bipartite_Graph {
             for(int i: map.get(node)){
                 if(color[i]==-1){
                     q.add(i);
-                    color[i] = (color[node]==1)?0:1;
+                    color[i] = 1-color[node];
                 }else{
                     if (color[node]==color[i]) return false;
                 }
