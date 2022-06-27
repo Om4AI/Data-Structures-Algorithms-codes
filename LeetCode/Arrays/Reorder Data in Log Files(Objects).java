@@ -27,7 +27,7 @@ class Solution {
             }
         }
         
-        // Comparator - Override original method
+        // Comparator - Override original method (Internal)
         Comparator<Log> logComp = new Comparator<>(){
             @Override
             public int compare(Log l1, Log l2){
