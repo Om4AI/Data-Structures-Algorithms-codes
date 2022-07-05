@@ -1,4 +1,4 @@
-
+import java.util.*;
 // --------------------- Time Complexity - O(nlogn)---------------------
 class Solution {
     public int longestConsecutive(int[] arr) {
@@ -24,3 +24,27 @@ class Solution {
     }
 }
 // ----------------------------------------------------------------------
+
+// ----------------------- Time Complexity O(n) -------------------------
+class Solution {
+    public int longestConsecutive(int[] nums){
+        // Remove duplicates
+        HashSet<Integer> set = new HashSet<>();
+        for(int i: nums) set.add(i);
+        
+        int res = 0;
+        for(int num: set){
+            int currstreak = 1;
+            int curr = num;
+            if(!set.contains(num-1)){
+                while(set.contains(curr+1)){
+                    currstreak++;
+                    curr++;
+                }
+            }
+            res = Math.max(res,currstreak);
+        }
+        return res;
+    }
+}
+// ------------------------------------------------------------------------
