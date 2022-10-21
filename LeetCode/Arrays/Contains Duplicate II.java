@@ -10,3 +10,25 @@ class Solution {
         return false;
     }
 }
+
+
+// Approach II
+class Solution {
+    public boolean containsNearbyDuplicate(int[] arr, int k) {
+        HashMap<Integer,Integer> map = new HashMap<>();
+        
+        int n = arr.length;
+        for(int i=0; i<n; i++){
+            int el = arr[i];
+            if(!map.containsKey(el)){
+                map.put(el, i+k);
+            }else{
+                if(i<=map.get(el)) return true;
+                else{
+                    map.put(el, i+k);
+                }
+            }
+        }
+        return false;
+    }
+}
