@@ -2,25 +2,25 @@
 
 import java.util.*;
 class Solution {
+    public boolean leafSimilar(TreeNode root1, TreeNode root2) {
+        List<Integer> l1 = getNodes(root1);
+        List<Integer> l2 = getNodes(root2);
 
-    static List<Integer> get_leaves(TreeNode root){
-        List<Integer> list = new ArrayList();
-        if (root==null) return list;
-        if (root.left==null && root.right==null){
-            list.add(root.val);
-        }
-        else{
-            List<Integer> l = get_leaves(root.left);
-            List<Integer> r = get_leaves(root.right);
-            list.addAll(l);
-            list.addAll(r);
-        }
-        return list;
+        return l1.equals(l2);
     }
 
-    public boolean leafSimilar(TreeNode root1, TreeNode root2) {
-        List<Integer> first = get_leaves(root1);
-        List<Integer> second = get_leaves(root2);
-        return first.equals(second);
+    public static List<Integer> getNodes(TreeNode root){
+        List<Integer> res = new ArrayList<Integer>();
+
+        // Base condition
+        if(root==null) return res;
+
+        if(root.left==null && root.right==null) res.add(root.val); 
+        else{
+            res.addAll(getNodes(root.left));
+            res.addAll(getNodes(root.right));
+        }
+
+        return res;
     }
 }
