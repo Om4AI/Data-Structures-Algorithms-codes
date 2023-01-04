@@ -1,5 +1,4 @@
-
-// Brute Force Approach
+// Approach 1: Brute Force Approach
 class Solution {
     public int minDeletionSize(String[] strs){
         int m = strs.length, n = strs[0].length();
