@@ -10,7 +10,7 @@ DSA is very important for developing logic and to improve problem solving skills
 </br>
 
 ### Languages used - 
-![image](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
+<img src="Readme Resources/java_icon" alt="">
 ![image](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 
 ---
