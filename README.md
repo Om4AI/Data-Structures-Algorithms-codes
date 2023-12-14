@@ -9,9 +9,12 @@ DSA is very important for developing logic and to improve problem solving skills
 ![image](https://img.shields.io/badge/-CodeChef-5B4638?style=for-the-badge&logo=CodeChef&logoColor=white)
 </br>
 
-### Languages used - 
-<img src="Readme Resources/java_icon" alt="">
-![image](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+
+<p align="center">DSA Tech Stack</p>
+<p align="center">
+<img src="Readme Resources/java_icon.png" height="60px" width="60px" alt="">
+<img src="Readme Resources/python_icon.png" height="60px" width="60px" alt="">
+</p>
 
 ---
 </br>
