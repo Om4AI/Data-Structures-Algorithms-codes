@@ -16,6 +16,11 @@ DSA is very important for developing logic and improving problem-solving skills.
 <img src="Readme Resources/python_icon.png" height="60px" width="60px" alt="">
 </p>
 
----
-</br>
+#### Some of my important learnings - 
+1. Runtime of a code doesn't only depend on the time complexity of the code, it also depends on the type of Data Structures used.
+
+    `Example:` HashMaps and Arrays used for the same use case could have the same TC, but the run time for HashMap code is longer.
+    Hence, whenever possible make use of simpler data structures.<br><br>
+    `Reference:` 2482 - Leetcode
+
 
