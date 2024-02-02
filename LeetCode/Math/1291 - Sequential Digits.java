@@ -3,9 +3,31 @@
  * solve some of the constraints mathematically rather than using
  * programmatical verifications
  */
- 
- import java.util.*;
 
+// Best approach
+ class Solution {
+    public List<Integer> sequentialDigits(int low, int high) {
+        String num = "123456789";
+        List<Integer> res = new ArrayList<>();
+
+        int min_len = String.valueOf(low).length();
+        int max_len = String.valueOf(high).length();
+
+        for (int i=min_len; i<=max_len; i++){
+            for (int j=0; j<10-i; j++){
+                int n = Integer.parseInt(num.substring(j, j+i));
+                if (n>=low && n<=high) res.add(n);
+            }
+        }
+        return res;
+    }
+}
+
+
+
+
+
+ // Passed but unnecessary
  class Solution {
      public int create_sequential(int start, int k){
          StringBuffer sb = new StringBuffer();
