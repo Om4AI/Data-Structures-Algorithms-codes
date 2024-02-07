@@ -19,13 +19,16 @@ DSA is very important for developing logic and improving problem-solving skills.
 #### Some of my important learnings - 
 1. Runtime of a code doesn't only depend on the time complexity of the code, it also depends on the type of Data Structures used.
 
-    `Example:` HashMaps and Arrays used for the same use case could have the same TC, but the run time for HashMap code is longer.
+    Example: <br>HashMaps and Arrays used for the same use case could have the same TC, but the run time for HashMap code is longer.
     Hence, whenever possible make use of simpler data structures.<br><br>
     `Reference:` 2482 - Leetcode
+   <br><br>
 
 
 2. Custom Sorting is an important topic: Helps to simplify problems when sorting is required on a sub-value in an array's element
-    `Example: Arrays.sort(<Array>, <Custom Lambda Function>)`
+   
+    Example:<br> `Arrays.sort(<Array>, <Custom Lambda Function>)`<br><br>
     `Reference: ` 451 - Leetcode
-     
+
+     <br><br>
 
