@@ -24,3 +24,8 @@ DSA is very important for developing logic and improving problem-solving skills.
     `Reference:` 2482 - Leetcode
 
 
+2. Custom Sorting is an important topic: Helps to simplify problems when sorting is required on a sub-value in an array's element
+    `Example: Arrays.sort(<Array>, <Custom Lambda Function>)`
+    `Reference: ` 451 - Leetcode
+     
+
