@@ -18,17 +18,30 @@ DSA is very important for developing logic and improving problem-solving skills.
 
 #### Some of my important learnings - 
 1. Runtime of a code doesn't only depend on the time complexity of the code, it also depends on the type of Data Structures used.
+   ```
+    Example: HashMaps and Arrays used for the same use case could have the same TC,
+             but the run time for HashMap code is longer.
+    Hence, whenever possible make use of simpler data structures.
+    Reference: 2482 - Leetcode
+   ```
 
-    Example: <br>HashMaps and Arrays used for the same use case could have the same TC, but the run time for HashMap code is longer.
-    Hence, whenever possible make use of simpler data structures.<br><br>
-    `Reference:` 2482 - Leetcode
-   <br><br>
+3. Custom Sorting is an important topic: Helps to simplify problems when sorting is required on a sub-value in an array's element
 
+   ```
+    Example: Arrays.sort(<Array>, <Custom Lambda Function>)
+    Reference: 451 - Leetcode
+   ```
 
-2. Custom Sorting is an important topic: Helps to simplify problems when sorting is required on a sub-value in an array's element
-   
-    Example:<br> `Arrays.sort(<Array>, <Custom Lambda Function>)`<br><br>
-    `Reference: ` 451 - Leetcode
+4. In Bottom Up approach (Tabulation), dp[ind] is actually the recursive function in Memoization (Top down) <br> so replace every function call with dp[ind] when we write bottom up's loop
+   ```
+   for (int ind=n-1; ind>=0; ind--){
+            ...
+            for (int i=ind; i<Math.min(n, ind+k); i++){
+                ...
 
-     <br><br>
-
+                int sum = (len*max) + dp[i+1];
+                max_sum = Math.max(max_sum, sum);
+            }
+            dp[ind] = max_sum;
+        }
+   ```
