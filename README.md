@@ -25,15 +25,26 @@ DSA is very important for developing logic and improving problem-solving skills.
     Reference: 2482 - Leetcode
    ```
 
-3. Custom Sorting is an important topic: Helps to simplify problems when sorting is required on a sub-value in an array's element
+2. Custom Sorting is an important topic: Helps to simplify problems when sorting is required on a sub-value in an array's element
 
    ```
     Example: Arrays.sort(<Array>, <Custom Lambda Function>)
     Reference: 451 - Leetcode
    ```
 
-4. In Bottom Up approach (Tabulation), dp[ind] is actually the recursive function in Memoization (Top down) <br> so replace every function call with dp[ind] when we write bottom up's loop
+3. In Bottom Up approach (Tabulation), dp[ind] is actually the recursive function in Memoization (Top down) <br> so replace every function call with dp[ind...] when we write bottom up's loop
    ```
+   -------- Top Down --------
+   for (int i=ind; i<Math.min(n, ind+k); i++){
+            ...
+
+            int sum = (len*max) + max_partition_sum(i+1);
+            max_sum = Math.max(max_sum, sum);
+        }
+        return dp[ind] = max_sum;
+
+   
+   -------- Bottom Up --------
    for (int ind=n-1; ind>=0; ind--){
             ...
             for (int i=ind; i<Math.min(n, ind+k); i++){
@@ -44,4 +55,7 @@ DSA is very important for developing logic and improving problem-solving skills.
             }
             dp[ind] = max_sum;
         }
+
+
+   The max_partition_sum(i+1) has been replaced by dp[i+1]
    ```
