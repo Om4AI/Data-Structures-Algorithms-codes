@@ -59,3 +59,9 @@ DSA is very important for developing logic and improving problem-solving skills.
 
    The max_partition_sum(i+1) has been replaced by dp[i+1]
    ```
+
+4. The Bottom Up approach code can be easily written, just perform the Memoization function logic inside an outer loop. Mostly there is no need to change the Memoization function logic
+   ```
+   Refer:  132 - Palindrome Partitioning II - Top Down
+           132 - Palindrome Partitioning II - Bottom Up
+   ```
