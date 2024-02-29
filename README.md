@@ -32,36 +32,10 @@ DSA is very important for developing logic and improving problem-solving skills.
     Reference: 451 - Leetcode
    ```
 
-3. In Bottom Up approach (Tabulation), dp[ind] is actually the recursive function in Memoization (Top down) <br> so replace every function call with dp[ind...] when we write bottom up's loop
+3. Whenever we have something like appending numbers one after the other like (1..2..3..4)
+   Always use the approach of -
    ```
-   -------- Top Down --------
-   for (int i=ind; i<Math.min(n, ind+k); i++){
-            ...
+   res = res * 10 + number
 
-            int sum = (len*max) + max_partition_sum(i+1);
-            max_sum = Math.max(max_sum, sum);
-        }
-        return dp[ind] = max_sum;
-
-   
-   -------- Bottom Up --------
-   for (int ind=n-1; ind>=0; ind--){
-            ...
-            for (int i=ind; i<Math.min(n, ind+k); i++){
-                ...
-
-                int sum = (len*max) + dp[i+1];
-                max_sum = Math.max(max_sum, sum);
-            }
-            dp[ind] = max_sum;
-        }
-
-
-   The max_partition_sum(i+1) has been replaced by dp[i+1]
-   ```
-
-4. The Bottom Up approach code can be easily written, just perform the Memoization function logic inside an outer loop. Mostly there is no need to change the Memoization function logic
-   ```
-   Refer:  132 - Palindrome Partitioning II - Top Down
-           132 - Palindrome Partitioning II - Bottom Up
+   This helps to save conversion from strings to numbers and vice versa
    ```
