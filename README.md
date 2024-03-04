@@ -39,3 +39,17 @@ DSA is very important for developing logic and improving problem-solving skills.
 
    This helps to save conversion from strings to numbers and vice versa
    ```
+
+4. `BigInteger` is one of the most important classes in Java. It is used to perform arithmetic operations when the data is not in the
+   range of any of the other datatypes.
+   ```
+   Some of the methods of BigInteger -
+   1. add()
+   2. multiply()
+   3. pow()
+   4. abs()
+   5. intValue()
+   6. longValue()
+
+   Check the question - Large factorial (Interviewbit)
+   ```
