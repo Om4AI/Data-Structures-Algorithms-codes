@@ -54,4 +54,11 @@ DSA is very important for developing logic and improving problem-solving skills.
    Check the question - Large factorial (Interviewbit)
    ```
 
-5. `Time Complexity lesson`: Sometimes we shouldn't directly think in the most optimized solution.
+5. `Time Complexity lesson`: Sometimes we shouldn't directly think in terms of the most optimized solution. We must see what the input is and accordingly think about what could be the acceptable time complexity.
+   Sometimes a $$O(n^3)$$ solution can also work.
+   ```
+   Example: In the question:
+            Valid IP Addresses (Interviewbit):  The maximum input cannot be that huge because it is an IP address.
+                                                So, in this case, an O(n^3) solution will also work
+                                                according to the input.
+   ```
