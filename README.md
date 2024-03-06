@@ -53,3 +53,5 @@ DSA is very important for developing logic and improving problem-solving skills.
 
    Check the question - Large factorial (Interviewbit)
    ```
+
+5. `Time Complexity lesson`: Sometimes we shouldn't directly think in the most optimized solution.
