@@ -62,3 +62,8 @@ DSA is very important for developing logic and improving problem-solving skills.
                                                 So, in this case, an O(n^3) solution will also work
                                                 according to the input.
    ```
+
+6. `Constant Extra Space`: This means, the DSA problem needs to be solved without using an extra data structure O(1) space. So you cannot use an extra Hashset, Array, or any other data structure for that matter.
+   ```
+   
+   ```
