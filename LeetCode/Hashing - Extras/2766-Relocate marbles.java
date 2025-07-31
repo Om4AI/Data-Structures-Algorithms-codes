@@ -26,4 +26,22 @@ class Solution {
     }
 }
 
-// HashSet approach
+// HashSet approach (Optimized (best solution))
+class Solution {
+    public List<Integer> relocateMarbles(int[] arr, int[] moveFrom, int[] moveTo) {
+        HashSet<Integer> set = new HashSet<>();
+        
+        int n = arr.length;
+        int m = moveFrom.length;
+        for (int i=0; i<n; i++){
+            set.add(arr[i]);
+        }
+        for (int i=0; i<m; i++){
+            set.remove(moveFrom[i]);
+            set.add(moveTo[i]);
+        }
+        List<Integer> l = new ArrayList<>(set);
+        Collections.sort(l);
+        return l;
+    }
+}
