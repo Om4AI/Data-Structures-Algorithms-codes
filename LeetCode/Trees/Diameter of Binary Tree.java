@@ -1,20 +1,26 @@
-// Code by @Om
+// Approach -
+// For a node, find the left height & right height
+//      1. Maximum path can be: (left height + right height)
+//      2. Check if global maximum can be updated
+//      3. Return the height of the tree including the node
+//      4. Use a static variable since it needs to be shared &
+//         update it in main function since every testcase won't reset it on its own
+
 class Solution {
-    int max = Integer.MIN_VALUE;
+    static int diameter = 0;
     public int diameterOfBinaryTree(TreeNode root) {
-        if (root==null) return 0;
-        else{
-            int lh = getmaxheight(root.left);
-            int rh = getmaxheight(root.right);
-            if (lh+rh > max) max = lh+rh;
-            diameterOfBinaryTree(root.left);
-            diameterOfBinaryTree(root.right);
-        }
-        return max;
+        diameter = 0;
+        getheight(root);
+        return diameter;
     }
 
-    public int getmaxheight(TreeNode root){
+    int getheight(TreeNode root){
         if (root==null) return 0;
-        else return (1 + Math.max(getmaxheight(root.left), getmaxheight(root.right)));
+
+        int lh = getheight(root.left);
+        int rh = getheight(root.right);
+        diameter = Math.max(diameter, lh+rh);
+
+        return 1 + Math.max(lh, rh);
     }
 }
