@@ -1,37 +1,25 @@
-import java.util.*;
+// Approach - 
+//     1. Perform the level order traversal
+//     2. For each level, find the complete level nodes and add the last value to resultant list
+
 class Solution {
     public List<Integer> rightSideView(TreeNode root){
-        List<List<Integer>> l = levelOrderTraversal(root);
         List<Integer> res = new ArrayList<>();
-        for(List<Integer> list: l){
-            res.add(list.get(list.size() - 1));
-        }
-        return res;
-    }
-    
-    public static List<List<Integer>> levelOrderTraversal(TreeNode root){
-        List<List<Integer>> res = new ArrayList<>();
+        if (root==null) return res;
 
-        // Base Case
-        if(root==null) return res;
-
-        // Initialize the Queue and add root node
         Queue<TreeNode> q = new LinkedList<>();
         q.add(root);
 
-        // Loop for BFS traversal
-        while(!q.isEmpty()){
-            List<Integer> l = new ArrayList<>();
+        while (!q.isEmpty()){
             int n = q.size();
-            while(n-->0){
-                TreeNode node = q.poll();
-                l.add(node.val);
-
-                // Add children
-                if(node.left!=null) q.add(node.left);
-                if(node.right!=null) q.add(node.right);
+            List<Integer> level = new ArrayList<>();
+            while (n-->0){
+                TreeNode currNode = q.poll();
+                level.add(currNode.val);
+                if (currNode.left != null) q.add(currNode.left);
+                if (currNode.right != null) q.add(currNode.right);
             }
-            res.add(l);
+            res.add(level.get(level.size()-1));
         }
         return res;
     }
