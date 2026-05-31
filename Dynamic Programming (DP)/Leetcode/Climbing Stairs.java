@@ -1,22 +1,21 @@
-import java.util.*;
-class Solution {
-    public static int t[];
-    public int climbStairs(int n) {
-        t = new int[n+1];
-        Arrays.fill(t, -1);
 
-        return distinctWays(n);
+// Memoization solution - Top Down approach
+class Solution {
+    public int climbStairs(int n) {
+        int[] dp = new int[n+1];
+        Arrays.fill(dp, -1);
+
+        return countWays(dp, n);
     }
 
-    public int distinctWays(int n){
-        // Base cases
+    static int countWays(int[] dp, int n){
+        // Base case
+        if (n==0) return 1;
         if (n==1) return 1;
-        else if (n==2) return 2;
 
-        // Memoization (Check if that value already exists)
-        if (t[n]!=-1) return t[n];
+        // Check dp
+        if (dp[n] != -1) return dp[n];
 
-        // Store the value for accessing later
-        return t[n] = distinctWays(n-1) + distinctWays(n-2);
+        return dp[n] = countWays(dp, n-1) + countWays(dp, n-2);
     }
 }
