@@ -10,7 +10,7 @@ import java.util.*;
  * }
  */
 
-// Solution 1 - First approach - 11ms 
+// Solution 1 - First approach - 11ms
 class Solution {
     public int[] nodesBetweenCriticalPoints(ListNode head) {
         List<Integer> pos = new ArrayList<>();
