@@ -1,5 +1,16 @@
 import java.util.*;
 
+// Stack + Greedy approach (we perform the best move at the current instance)
+// Approach -
+// 1. Add the characters in the stack ("(" & "*")
+// 2. When we get a ")" character, we remove the first instance of "(" or if inexistent then remove the first "*"
+// 3. For knowing if we have the required character to be removed, we maintain 2 counts - leftCount("(") & starCount("*")
+// 4. For checking if the remaining stack is valid, we have a few conditions
+//  a. First condition is - Stack is empty so everything checked out
+//  b. If the topmost character is "(" means, we can't cancel it out with anything else
+//  c. We count the number of stars (*) & reduce the count by 1 every time we encounter a "(". The gist is to find if all the remaining "(" can be cancelled by the stars coming after them
+
+
 class Solution {
     public boolean checkValidString(String s) {
         Stack<Character> stk = new Stack<>();
