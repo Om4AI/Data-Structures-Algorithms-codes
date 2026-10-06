@@ -6,7 +6,8 @@ import java.util.*;
 
 public class Main {
     public static void solve(FastScanner in, FastPrinter out) throws IOException {
-        int n = in.nextInt(), k = in.nextInt(), score = 0;
+        int n = in.nextInt(), k = in.nextInt();
+        long score = 0;
         List<Integer> l = new ArrayList<>();
         for (int i=0; i<n; i++){
             l.add(in.nextInt());
@@ -31,7 +32,7 @@ public class Main {
         FastPrinter out = new FastPrinter(System.out);
 
         int t = 1;
-        // t = in.nextInt(); // Uncomment this line if the problem has multiple test cases
+        t = in.nextInt();
 
         while (t-- > 0) {
             solve(in, out);
