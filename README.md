@@ -25,7 +25,7 @@ DSA is very important for developing logic and improving problem-solving skills.
       </a>
     </td>
     <td>
-      <a href="https://app.notion.com/p/DSA-Learnings-4158b8e2f25a8029b12efebaac4839b4?source=copy_link"><strong>Learnings</strong></a><br>
+      <a href="https://app.notion.com/p/DSA-Learnings-4158b8e2f25a8029b12efebaac4839b4?source=copy_link"><strong>𝙇𝙚𝙖𝙧𝙣𝙞𝙣𝙜𝙨</strong></a><br>
       My DSA learnings in various topics
     </td>
   </tr>
